@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}External Links — Sports/Game Fan{% endblock %}
+{% block content %}
+  <h2>External Resources</h2>
+  <ul>
+    {% for u in links %}
+      <li><a href="{{ u }}" target="_blank" rel="noopener noreferrer">{{ u }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

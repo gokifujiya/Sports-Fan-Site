@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Home — Sports/Game Fan{% endblock %}
+{% block content %}
+  <h2>Welcome!</h2>
+  <p>This is the landing page. Enjoy a random scene from our sport/game.</p>
+  {% if img_url %}
+    <img src="{{ img_url }}" alt="Random sport scene" style="max-width:100%;border-radius:12px;">
+  {% else %}
+    <p>No images configured yet.</p>
+  {% endif %}
+{% endblock %}

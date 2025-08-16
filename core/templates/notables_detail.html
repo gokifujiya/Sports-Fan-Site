@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ player.name }} — Sports/Game Fan{% endblock %}
+{% block content %}
+  <a href="{% url 'core:notables_list' %}">&larr; Back to list</a>
+  <h2>{{ player.name }}</h2>
+  <img src="{{ player.image }}" alt="{{ player.name }}" style="max-width:100%;border-radius:12px;">
+  <p>{{ player.description }}</p>
+  <h3>Stats</h3>
+  <ul>
+    {% for s in player.stats %}
+      <li>{{ s }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

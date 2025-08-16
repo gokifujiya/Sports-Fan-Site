@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Notables — Sports/Game Fan{% endblock %}
+{% block content %}
+  <h2>Featured Players/Characters</h2>
+  <div class="grid">
+    {% for p in notables %}
+    <a class="card" href="{% url 'core:notables_detail' forloop.counter0 %}">
+      <img src="{{ p.image }}" alt="{{ p.name }}">
+      <div class="pad">
+        <strong>{{ p.name }}</strong><br>
+        <small>{{ p.description|truncatechars:80 }}</small>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+{% endblock %}

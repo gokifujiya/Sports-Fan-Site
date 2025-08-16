@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Sports/Game Fan Site{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; }
+    header, footer { padding: 1rem; background: #f5f5f5; }
+    nav a { margin-right: 1rem; text-decoration: none; }
+    main { padding: 1.25rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; }
+    .card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; }
+    .card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .card .pad { padding: .75rem 1rem; }
+  </style>
+</head>
+<body>
+  {% block header %}
+  <header>
+    <h1>Sports/Game Fan Site</h1>
+    <nav>
+      <a href="{% url 'core:index' %}">Home</a>
+      <a href="{% url 'core:rules' %}">Rules</a>
+      <a href="{% url 'core:notables_list' %}">Notables</a>
+      <a href="{% url 'core:external_links' %}">External Links</a>
+    </nav>
+  </header>
+  {% endblock %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block footer %}
+  <footer>
+    <p>&copy; <span id="year"></span> Sports/Game Fan. Webmaster: <a href="mailto:webmaster@example.com">webmaster@example.com</a></p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  {% endblock %}
+</body>
+</html>
